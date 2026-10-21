@@ -1,0 +1,9 @@
+pandas==2.2.*
+numpy
+pyarrow
+jupyter
+kaggle
+python-dotenv
+matplotlib
+scikit-learn
+xgboost

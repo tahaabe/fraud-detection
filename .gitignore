@@ -1,0 +1,9 @@
+.venv/
+data/
+*.zip
+kaggle.json
+.env
+*.json.key
+gcp-key*.json
+__pycache__/
+.ipynb_checkpoints/
