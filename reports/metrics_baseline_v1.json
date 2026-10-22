@@ -1,0 +1,18 @@
+{
+  "name": "baseline_v1",
+  "n_features": 240,
+  "scale_pos_weight": 24.65,
+  "best_iteration": 2022,
+  "train_minutes": 8.5,
+  "pr_auc": 0.5106,
+  "roc_auc": 0.892,
+  "base_rate": 0.035,
+  "recall@1%": 0.2452,
+  "precision@1%": 0.8595,
+  "recall@5%": 0.5635,
+  "precision@5%": 0.395,
+  "pr_auc_W": 0.1715,
+  "base_rate_W": 0.0188,
+  "pr_auc_nonW": 0.7152,
+  "base_rate_nonW": 0.0931
+}

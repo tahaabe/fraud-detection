@@ -7,3 +7,4 @@ kaggle.json
 gcp-key*.json
 __pycache__/
 .ipynb_checkpoints/
+models/
