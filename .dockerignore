@@ -1,0 +1,8 @@
+.venv
+data
+models
+notebooks
+reports
+.git
+.env
+*.parquet
