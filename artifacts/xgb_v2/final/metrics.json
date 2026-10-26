@@ -1,0 +1,14 @@
+{
+  "mode": "final",
+  "feature_list": "v2",
+  "n_features": 226,
+  "scale_pos_weight": 25.4281,
+  "xgboost_version": "3.2.0",
+  "train_minutes": 7.8048,
+  "n_estimators": 2000,
+  "train_rows": 456201,
+  "train_days": [
+    31,
+    182
+  ]
+}

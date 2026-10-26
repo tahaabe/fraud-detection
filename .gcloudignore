@@ -1,0 +1,12 @@
+@'
+.git
+.gitignore
+.venv
+data
+models
+notebooks
+reports
+.env
+*.parquet
+'@ | Set-Content -Path .gcloudignore -Encoding ascii__pycache__
+*.pyc

@@ -5,4 +5,5 @@ notebooks
 reports
 .git
 .env
-*.parquet
+*.parquet__pycache__
+*.pyc

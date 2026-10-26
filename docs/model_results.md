@@ -31,3 +31,17 @@
   non-W 0.715 / W 0.192, best_iteration 1,465
 - Final model: days 31–182 (456,201 rows), 2,000 trees, scale_pos_weight 25.4, XGBoost 3.2.0
 - Artifacts: gs://…/models/xgb_v2/{validate,final}/ (model, categories, feature list, metrics)
+## Serving (FastAPI)
+- Parity: serving features == training features on 1,182 real transactions (all 226 inputs, predictions identical)
+- Bug caught: has_identity is a derived training feature, absent from raw requests → API now computes it;
+  parity test now feeds only raw-schema fields (lesson: a parity test needs realistic inputs)
+- Latency (in-app, laptop): approve path median ~10 ms (p-max 13.8 ms over 19 warm requests);
+  exact SHAP adds ~155 ms → computed only for review/high_risk or explain=true
+- Optimization: pandas per-request path (≈115 ms) replaced by numpy + training category codes (≈3 ms)
+## Deployment (Cloud Run, europe-west1)
+- Image built with Cloud Build (docker/api.dockerfile, xgboost-cpu, non-root user), stored in Artifact Registry
+- Cloud Run: 1 vCPU / 1 GiB, scale-to-zero, max 2 instances, public URL (demo; production would require auth)
+- Deployed results identical to local (same scores and SHAP values)
+- Latency over 20 requests: in-app median 10.1 ms (p95 ≈ 13 ms); total from a home connection ~160 ms (network-dominated)
+- Exact SHAP on flagged transactions: ~160 ms in-app
+- Bugs caught only in the Linux container: file extension case (app.PY) → lesson: build/test the image in CI

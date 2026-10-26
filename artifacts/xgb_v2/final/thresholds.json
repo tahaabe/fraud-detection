@@ -1,0 +1,6 @@
+{
+  "high_risk": 0.9893873333930969,
+  "review": 0.043454915285110474,
+  "basis": "score quantiles on unlabeled test period (days 213-395)",
+  "n_scored": 506691
+}

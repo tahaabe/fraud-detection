@@ -42,3 +42,6 @@
 - Checks: 1,097,231 rows, no duplicate IDs, 247 columns, 20,663 frauds across labeled folds
 - Train fold: 3.98% fraud → scale_pos_weight ≈ 24; valid: 3.50% (drift → tune threshold on valid)
 - Limitation: warmup = December → holiday behavior absent from training rows (ablation: include warmup)
+## IAM (least privilege)
+- Compute default SA: roles/cloudbuild.builds.builder (project) → Cloud Build can read sources, push images, write logs
+- Vertex AI service agent: roles/storage.objectViewer on the model bucket only → Model Registry can read artifacts
